@@ -95,17 +95,18 @@ gsap.from(".transition2", {
     trigger: ".transition2",
     start: "top bottom ",
   },
-  y: 50,
+  y: 100,
   opacity: 0,
   duration: 1.2,
   stagger: 0.3,
 });
+
 gsap.from(".transition1", {
   ScrollTrigger: {
     trigger: ".transition1",
     start: "top bottom",
   },
-  y: 50,
+  y: 100,
   opacity: 0,
   duration: 1.2,
   stagger: 0.3,

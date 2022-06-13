@@ -5,6 +5,7 @@ body {
 }
 
 ul {
+  font-size: small;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -13,6 +14,7 @@ ul {
 a {
   text-decoration: none;
 }
+
 image {
   width: 100%;
 }
@@ -38,6 +40,7 @@ header {
   padding: 2em;
 
   .logo {
+    font-size: small;
     color: #00f7ff;
     font-weight: bold;
   }
@@ -58,6 +61,20 @@ header {
   display: none;
 }
 
+#circle {
+  animation: circleAnim 1s infinite alternate-reverse;
+}
+
+@keyframes circleAnim {
+  from {
+    transform: translate(0px, 0px);
+    z-index: 5;
+  }
+  to {
+    transform: translate(0px, 23px);
+  }
+}
+
 .hero {
   background: #6e00ff;
   color: white;
@@ -73,6 +90,19 @@ header {
   color: #be75a6;
 }
 
+.overlay {
+  z-index: 1;
+}
+
+.aboutMe {
+  padding: 2em 2em;
+}
+
+.hand {
+  width: 30px;
+  margin-top: -1.3em;
+}
+
 .scroll {
   width: 30px;
   margin-top: 2em;
@@ -82,6 +112,111 @@ section {
   padding: 4em 2em;
   text-align: center;
 }
+
+
+.desc {
+  font-weight: 700;
+  font-size: 30px;
+  font-style: italic;
+} 
+
+.featured-desc3 {
+  color: #252525;
+  margin-bottom: 3em;
+  font-size: 1em;
+  line-height: 1.8em;
+  font-weight: 500;
+}
+
+
+
+//start popup
+.box {
+  width: 70%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+  }
+  
+  .button {
+  font-size: 1em;
+  padding: 10px;
+  margin-left: -18em;
+  border: 2px solid #06D85F;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  }
+  .button:hover {
+  background: #06D85F;
+  }
+  
+  .overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  }
+  .overlay:target {
+  visibility: visible;
+  opacity: 1;
+  }
+  
+  .popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 50%;
+  position: relative;
+  transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+  }
+  .popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  }
+  .popup .close:hover {
+  color: #06D85F;
+  }
+  .popup .content {
+  max-height: 30%;
+  overflow: auto;
+  }
+  
+  
+   
+  @media screen and (max-width: 700px){
+  .box{
+  width: 70%;
+  }
+  .popup{
+  width: 70%;
+  }
+  }
+  
+//end popup
 
 .featured {
   position: relative;
@@ -126,7 +261,7 @@ section {
   color: black;
   font-weight: bold;
   font-size: 1em;
-  margin-top: -2em;
+  margin-top: 0em;
   text-align: left;
   display: block;
 }
@@ -140,15 +275,21 @@ section {
   display: block;
 }
 
+.inner1{
+  margin-top: 3em;
+}
+
 .bottun_amazon {
   border-radius: 15px;
-  background: #5b25a3;
-  margin-left: 7em;
+  background: #be75a6;
   height: 3em;
   width: 10em;
   display: flex;
   justify-content: center;
   padding-top: 0.5em;
+}
+.main {
+  margin-left: 13em;
 }
 
 .amazon_link {
@@ -165,16 +306,6 @@ section {
 .contuct-me {
   margin-top: -50px;
 }
-
-
-
-// .description-images {
-//   height: 150px;
-//   width: 600px;
-//   display: flex;
-//   margin-top: -2cm;
-//   padding: 2em;
-// }
 
 .description-images {
   width: 200px;
@@ -280,13 +411,6 @@ section {
   z-index: -1;
 }
 
-// .right-transition1 {
-//   height: 200px;
-//   display: grid;
-//   margin-left: 7.5cm;
-//   margin-top: -2cm;
-// }
-
 @media only screen and (min-width: 800px) {
   .featured {
     text-align: left;
@@ -309,8 +433,7 @@ section {
     grid-template-columns: repeat(5, auto);
     grid-gap: 7em;
     margin-left: 3cm;
-    // display: flex;
-    // justify-content: space-between;
+   
   }
 
   .description-images1 img {
@@ -362,6 +485,12 @@ section {
 }
 
 @media only screen and (min-width: 1050px) {
+  ul {
+    font-size: medium;
+  }
+
+  
+
   .hero {
     height: 90vh;
   }
@@ -380,6 +509,8 @@ section {
     grid-template-columns: 70% auto;
 
   }
+
+  
   .memo-app::before {
     content: "";
     position: absolute;
@@ -388,12 +519,10 @@ section {
     border-radius: 50%;
     background: #cbeaeb;
     top: 0;
-    left: -10em;
-    z-index: -1;
+    left: -11em;
+    z-index: 0;
   }
-  .bottun_amazon {
-    margin-left: 24.3cm;
-  }
+
 
   .description-images {
     width: 400px;
@@ -434,7 +563,7 @@ section {
   }
 
   .manual-btn {
-    border: 2px solid #00ff40;
+    border: 2px solid #be75a6;
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
@@ -446,7 +575,7 @@ section {
   }
 
   .manual-btn:hover {
-    background: #00ff40;
+    background: #be75a6;
   }
 
   #radio1:checked ~ .first {
@@ -478,8 +607,21 @@ section {
     margin-left: -80%;
   }
 
+  #raadio13:checked ~ .first {
+    margin-left: 0;
+  }#raadio23:checked ~ .first {
+    margin-left: -20%;
+  }#raadio33:checked ~ .first {
+    margin-left: -40%;
+  }#raadio43:checked ~ .first {
+    margin-left: -60%;
+  }
 
-  
+
+  .News-image {
+    margin-left: 14cm;
+    margin-top: -10cm;
+  }
 
   .group5 {
     display: unset;
@@ -490,6 +632,10 @@ section {
 
   header {
     padding: 2em 2em 2em 2em;
+
+    .logo {
+      font-size: medium;
+    }
   }
 
   .social-header {
@@ -528,10 +674,19 @@ section {
         font-size: 3em;
         line-height: 1.2em;
       }
+
+      .mt-2 {
+        font-size: 2em;
+      }
+
+      
     }
   }
   .meet {
     margin: unset;
+  }
+  .aboutMe {
+    padding: 4em 12.4em;
   }
 
   .hero-design {
@@ -540,19 +695,7 @@ section {
     margin-top: 15%;
     width: 100%;
   }
+
+  
 }
 
-.circle {
-  animation: cirleAnim 1s infinite alternate-reverse;
-}
-
-@keyframes circleAnim {
-  from {
-    transform: translate(262px, 798px);
-    z-index: 5;
-  }
-  to {
-    transform: translate(262px, 840px);
-    z-index: 5;
-  }
-}
