@@ -396,6 +396,33 @@ section {
   margin-left: -80%;
 }
 
+#raadio13:checked ~ .first {
+  margin-left: 0;
+}#raadio23:checked ~ .first {
+  margin-left: -20%;
+}#raadio33:checked ~ .first {
+  margin-left: -40%;
+}#raadio43:checked ~ .first {
+  margin-left: -60%;
+}
+
+.box {
+  margin-left: 12em;
+}
+
+.main{
+  margin: 0;
+}
+
+.kanime-image {
+  margin-left: 1em;
+}
+.description-images {
+  margin-left: 2.3em;
+}
+
+
+
 .memo-app {
   position: relative;
 }
